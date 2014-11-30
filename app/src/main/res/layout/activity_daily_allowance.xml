@@ -1,0 +1,108 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".DailyAllowanceActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom">
+
+        <com.kingcoopa.pinch.AutoResizeTextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="$25"
+            android:id="@+id/allowanceTextView"
+            android:enabled="false"
+            android:textColorHighlight="#ffff9714"
+            android:textSize="100dp"
+            android:layout_alignParentTop="false"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/allowance_good"
+            android:textStyle="bold"
+            android:layout_above="@+id/addTransactionLayout"
+            android:layout_alignParentLeft="false"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentRight="false"
+            android:layout_weight="100"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/addTransactionButton"
+            android:layout_centerHorizontal="true"
+            android:focusableInTouchMode="false"
+            android:id="@+id/addTransactionLayout"
+            android:layout_weight=".1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$"
+                android:id="@+id/main.currencySymbol"
+                android:layout_weight="0"
+                android:textSize="40dp" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:ems="10"
+                android:id="@+id/transactionEditText"
+                android:textSize="40sp"
+                android:layout_weight="1"
+                android:digits="0123456789."
+                android:textAlignment="textStart"
+                android:layout_gravity="start"
+                android:focusable="true"
+                android:focusableInTouchMode="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ADD"
+                android:id="@+id/acceptTransactionButton"
+                android:layout_weight="0"
+                android:textSize="30dp"
+                android:onClick="onAcceptTransactionClicked"
+                android:clickable="true" />
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="X"
+                android:id="@+id/closeTransactionButton"
+                android:layout_weight="0"
+                android:onClick="onCloseTransactionButtonClicked"
+                android:elegantTextHeight="false"
+                android:textSize="30sp" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$"
+            android:id="@+id/addTransactionButton"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:textColor="@color/allowance_good"
+            android:clickable="true"
+            android:textSize="50dp"
+            android:textStyle="bold"
+            android:onClick="onAddTransactionButtonClicked"
+            android:layout_weight=".1" />
+
+    </LinearLayout>
+
+</RelativeLayout>

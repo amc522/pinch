@@ -1,0 +1,18 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="GENERAL"
+        android:key="pref_key_general">
+
+        <EditTextPreference
+            android:key="pref_key_general_monthly_limit"
+            android:title="Default Monthly Limit"
+            android:summary="Default spending limit for a month"
+            android:selectAllOnFocus="true"
+            android:inputType="numberDecimal"
+            android:numeric="decimal"
+            android:singleLine="true"
+            android:maxLines="1"/>
+
+    </PreferenceCategory>
+</PreferenceScreen>

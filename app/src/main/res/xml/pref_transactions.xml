@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory
+        android:title="TRANSACTIONS"
+        android:key="pref_key_transactions">
+
+        <CheckBoxPreference
+            android:key="pref_key_transactions_delete_old"
+            android:title="Remove old transactions"
+            android:summary="Transactions from previous months with be automatically deleted"
+            android:defaultValue="true" />
+
+        <com.kingcoopa.pinch.ClearHistoryDialogPreference
+            android:key="pref_key_transactions_clear"
+            android:dialogTitle=""
+            android:dialogMessage="Clear all transactions?"
+            android:positiveButtonText="Yes"
+            android:negativeButtonText="Cancel"
+            android:title="Clear Transaction History"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

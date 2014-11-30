@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:paddingStart="0dp"
+    android:gravity="fill_horizontal"
+    android:id="@+id/historyItem.layout"
+    android:paddingEnd="10dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200000000.00"
+        android:id="@+id/historyItem.amountTextView"
+        android:textSize="20sp"
+        android:layout_weight="1"
+        android:gravity="end"
+        android:lines="1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="50dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/historyItem.labelTextView"
+        android:textSize="20sp"
+        android:maxLines="1"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/historyItem.amountTextView"
+        android:text="()"
+        android:layout_marginLeft="5dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="12:55 PM"
+        android:id="@+id/historyItem.timeTextView"
+        android:textSize="20sp"
+        android:layout_weight="1"
+        android:layout_gravity="right"
+        android:gravity="end"
+        android:layout_alignParentLeft="false"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true" />
+</RelativeLayout>
