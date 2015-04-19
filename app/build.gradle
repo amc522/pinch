@@ -1,19 +1,18 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 21
-    buildToolsVersion "21.1.0"
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
 
     defaultConfig {
         applicationId "com.kingcoopa.pinch"
-        minSdkVersion 16
-        targetSdkVersion 21
+        minSdkVersion 21
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
     buildTypes {
         release {
-            runProguard false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -21,6 +20,6 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile 'com.android.support:support-v4:21.+'
-    compile 'com.android.support:support-v4:21.0.0'
+    compile 'com.android.support:support-v4:22.+'
+    compile 'com.android.support:support-v4:22.0.0'
 }

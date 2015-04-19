@@ -29,6 +29,7 @@ public class DailyAllowanceActivity extends Activity implements TextWatcher, Tex
     private LinearLayout _addTransactionLayout;
     private TextView _allowanceTextView;
     private EditText _transactionEditText;
+    private EditText _labelEditText;
     private Button _addTransactionButton;
     private Button _acceptTransactionButton;
 
@@ -68,6 +69,8 @@ public class DailyAllowanceActivity extends Activity implements TextWatcher, Tex
                 }
             }
         });
+
+        _labelEditText = (EditText)findViewById(R.id.labelEditText);
 
         _acceptTransactionButton = (Button)findViewById(R.id.acceptTransactionButton);
         _addTransactionButton = (Button)findViewById(R.id.addTransactionButton);
@@ -123,7 +126,12 @@ public class DailyAllowanceActivity extends Activity implements TextWatcher, Tex
 
     public void onAcceptTransactionClicked(View view) {
         _addTransactionLayout.setVisibility(View.INVISIBLE);
-        TransactionManager.getInstance().addTransaction(Double.parseDouble(_transactionEditText.getText().toString()), new Date());
+
+        if(_labelEditText.getText().length() == 0) {
+            TransactionManager.getInstance().addTransaction(Double.parseDouble(_transactionEditText.getText().toString()), new Date());
+        } else {
+            TransactionManager.getInstance().addTransaction(Double.parseDouble(_transactionEditText.getText().toString()), new Date(), _labelEditText.getText().toString());
+        }
         updateAllowanceView();
     }
 
@@ -159,6 +167,8 @@ public class DailyAllowanceActivity extends Activity implements TextWatcher, Tex
         _transactionEditText.setText("");
         _transactionEditText.setHint("0.00");
         _transactionEditText.setSelected(true);
+        _transactionEditText.setEnabled(true);
+
         _acceptTransactionButton.setEnabled(false);
     }
 
